@@ -5,30 +5,29 @@ import "../src/index.css";
 function Navbar() {
   return (
     <nav className="bg-black px-4 py-3">
-      <div className="container mx-auto flex flex-wrap items-center justify-between ">
-        <div className="flex items-center">
+      <div className="container mx-auto flex flex-wrap items-center justify-between">
+        <Link to="/yazilim-kaynaklari" className="flex items-center">
           <div>
-            {" "}
             <img
-              className=" mr-2 md:h-32 hover:brightness-110 hover:saturate-150 duration-200 transition-all hover:cursor-pointer"
+              className="h-16 md:h-32 hover:brightness-110 hover:saturate-150 duration-200 transition-all cursor-pointer"
               src="../src/assets/logo.png"
               alt="Logo"
             />
           </div>
-        </div>
-        <div className="flex mt-4 md:mt-0 montserrat">
-          <a
-            href="#team"
-            className="text-white hover:text-gray-300 transition-colors duration-300 block md:inline-block md:mt-0 md:ml-4 text-4xl text-pink-500 "
+        </Link>
+        <div className="flex mt-4 md:mt-0">
+          <Link
+            to="/iletisim"
+            className="text-white hover:text-primary transition-colors duration-300 block md:inline-block md:mt-0 md:ml-4 md:text-3xl text-lg text-secondary animated-link"
           >
-            Team
-          </a>
-          <a
-            href="#about"
-            className="text-white hover:text-gray-300 transition-colors duration-300 block md:inline-block md:mt-0 md:ml-8 text-4xl text-pink-500"
+            İletişim
+          </Link>
+          <Link
+            to="/hakkinda"
+            className="text-white hover:text-primary transition-colors duration-300 block md:inline-block md:mt-0 md:ml-8 md:text-3xl text-lg ps-5 text-pink-500 animated-link"
           >
-            About Us
-          </a>
+            Hakkında
+          </Link>
         </div>
       </div>
     </nav>

@@ -5,16 +5,17 @@ import "./index.css";
 import Home from "../components/Home";
 import NotFound from "../components/NotFound";
 import Navbar from "../components/Navbar";
-
+import HtmlPage from "../pages/HtmlPage";
 
 function App() {
   return (
     <Router>
-     
-        <Navbar /> {/* Place the Navbar component here */}
+      <Navbar />
 
       <Routes>
-      <Route path="/yazilim-kaynaklari" element={<Home />} />
+        <Route path="/yazilim-kaynaklari" element={<Home />} />
+        <Route path="/yazilim-kaynaklari/html" element={<HtmlPage />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
