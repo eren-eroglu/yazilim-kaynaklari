@@ -120,10 +120,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-body {
+html {
   background-image: url("../src/assets/bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 /* Navbar.css */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
@@ -151,8 +149,20 @@ body {
   transform: scaleX(1);
 }
 
-
-
 .animated-link:hover {
   animation: neon-glow 1s infinite;
 }
+.box {
+  --mask: conic-gradient(
+      from -45deg at bottom,
+      #0000,
+      #000 1deg 90deg,
+      #0000 91deg
+    )
+    50% / 25px 100%;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  position: relative;
+  transform-style: preserve-3d;
+}
+

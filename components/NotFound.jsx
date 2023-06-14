@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaRobot } from "react-icons/fa";
-
+import { BiArrowBack } from "react-icons/bi";
 const NotFound = () => {
   return (
     <div className="h-screen bg-black text-white flex flex-col justify-center items-center">
@@ -14,9 +14,9 @@ const NotFound = () => {
       <FaRobot className="text-9xl mb-6" />
       <Link
         to="/yazilim-kaynaklari"
-        className="px-6 py-3 bg-accent rounded-md text-neutral font-bold hover:bg-blue-600 transition-colors duration-300"
+        className="px-6 py-3 bg-accent rounded-md text-neutral font-bold hover:bg-blue-600 transition-colors duration-300 flex"
       >
-       Geri dön
+               <BiArrowBack className="mt-1 me-2"/>  Geri dön
       </Link>
     </div>
   );

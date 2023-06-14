@@ -6,7 +6,7 @@ import Home from "../components/Home";
 import NotFound from "../components/NotFound";
 import Navbar from "../components/Navbar";
 import HtmlPage from "../pages/HtmlPage";
-
+import Contact from "../components/Contact";
 function App() {
   return (
     <Router>
@@ -14,6 +14,7 @@ function App() {
 
       <Routes>
         <Route path="/yazilim-kaynaklari" element={<Home />} />
+        <Route path="/yazilim-kaynaklari/iletisim" element={<Contact />} />
         <Route path="/yazilim-kaynaklari/html" element={<HtmlPage />} />
 
         <Route path="*" element={<NotFound />} />

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import gif from "../src/assets/gif.gif";
-
+import Tag from "./Tag";
 import {
   faHtml5,
   faCss3,
@@ -15,7 +15,7 @@ import {
 
 function Home() {
   const [displayedText, setDisplayedText] = useState("");
-  const contactText = "Birini seçin, ücretsiz öğrenin";
+  const contactText = "Birini seçin, ücretsiz öğrenin 💻";
 
   useEffect(() => {
     let currentIndex = 0;
@@ -70,44 +70,81 @@ function Home() {
   }, []);
 
   return (
-    <div className="container mx-auto h-screen lg:w-1/2 flex flex-col justify-center items-center pe-3 ps-3 shadow-2xl drop-shadow-2xl">
-      <div
-        className="flex items-center bg-black rounded-3xl md:p-16 p-5 bg-opacity-50 flex-col top-32 absolute drop-shadow-2xl shadow-2xl"
-        style={{
-          backgroundImage: `url(${gif})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+    <main className="flex h-screen  flex-col ">
+      <Tag name="Yazılım Dilleri" />
+      <div className="mx-auto  lg:w-1/2 flex flex-col pe-3 ps-3 shadow-2xl drop-shadow-2xl w-full">
         <div
-          className="md:text-5xl text-center text-2xl text-black bg-purple-400 bg-opacity-30 rounded-3xl p-3
-         mb-6"
+          className="flex items-center bg-black rounded-3xl md:p-16 p-5 bg-opacity-50 flex-col mt-8  drop-shadow-2xl shadow-2xl w-full"
+          style={{
+            backgroundImage: `url(${gif})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
         >
-          {displayedText}
-          <span className="blinking-line"></span>
+          <div className="md:text-5xl text-center text-2xl text-black bg-purple-400 bg-opacity-30 rounded-3xl p-3 mb-6">
+            {displayedText}
+            <span className="blinking-line"></span>
+          </div>
+          <div className="flex flex-wrap justify-center">
+            {icons.map((icon, index) => (
+              <Link to={routes[index]} key={index}>
+                <div
+                  className={`${
+                    animateIndex >= index ? "text-focus-in" : "hidden"
+                  }`}
+                >
+                  <FontAwesomeIcon
+                    icon={icon}
+                    className={`md:text-8xl text-5xl m-3 hover:saturate-150 hover:scale-110 transition-all duration-200 bg-black rounded-xl p-4 bg-opacity-50 ${iconColors[index]}`}
+                  />
+                  <span className="text-center text-white"></span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <footer className="text-white text-center  bottom-0 absolute">
+            <p>&copy; 2023 Eren Eroglu.</p>
+          </footer>
         </div>
-        <div className="flex flex-wrap justify-center">
-          {icons.map((icon, index) => (
-            <Link to={routes[index]} key={index}>
-              <div
-                className={`${
-                  animateIndex >= index ? "text-focus-in" : "hidden"
-                }`}
-              >
-                <FontAwesomeIcon
-                  icon={icon}
-                  className={`md:text-8xl text-5xl m-3 hover:saturate-150 hover:scale-110 transition-all duration-200 bg-black rounded-xl p-4 bg-opacity-50   ${iconColors[index]}`}
-                />
-                <span className="text-center text-white"></span>
-              </div>
-            </Link>
-          ))}
+      </div>
+
+      <Tag name="Yol Haritaları" />
+      <div className="mx-auto  lg:w-1/2 flex flex-col pe-3 ps-3 shadow-2xl drop-shadow-2xl w-full mt-8">
+        <div
+          className="flex bg-black rounded-3xl md:p-16 p-5 bg-opacity-50 flex-col drop-shadow-2xl shadow-2xl w-full"
+          style={{
+            backgroundImage: `url(${gif})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <div className="md:text-5xl text-center text-2xl text-black bg-purple-400 bg-opacity-30 rounded-3xl p-3 mb-6 ">
+            Veya önce yol haritanızı belirleyin 😊
+            <span className="blinking-line"></span>
+          </div>
+          <div className="flex mx-auto flex-col gap-4">
+            <a
+              href="/front-end-roadmap"
+              className="text-white text-center bg-purple-600 rounded-lg p-3 hover:bg-purple-700"
+            >
+              Front-End Roadmap
+            </a>
+            <a
+              href="/back-end-roadmap"
+              className="text-white text-center bg-purple-600 rounded-lg p-3 hover:bg-purple-700"
+            >
+              Back-End Roadmap
+            </a>
+            <a
+              href="/full-stack-roadmap"
+              className="text-white text-center bg-purple-600 rounded-lg p-3 hover:bg-purple-700"
+            >
+              Full-Stack Roadmap
+            </a>
+          </div>
         </div>
-      </div> <footer className=" text-white text-center  w-full bottom-0 absolute">
-        <p>&copy; 2023 Eren Eroglu.</p>
-      </footer>
-     
-    </div>
+      </div>
+    </main>
   );
 }
 
