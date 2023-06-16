@@ -39,42 +39,42 @@ function Contact() {
               className="rounded-full w-48 h-48 border-blue-300 border-2"
             />
           </div>
-          <h2 className="text-3xl font-bold mb-4">Get in touch</h2>
-          <p className="text-gray-300 mb-6">Let's connect and collaborate!</p>
+          <h2 className="text-3xl font-bold mb-4">İletişime Geçin 👋 </h2>
+          <p className="text-gray-300 mb-6">Ben Eren Eroğlu!😊 Kod yazmayı çok seviyorum 🤩 Ulaşmak için:  </p>
           <div className="flex flex-col md:flex-row">
             <SocialLink
               icon={<IoLogoLinkedin />}
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/eroglueren/"
               text="LinkedIn"
               color="#0e76a8"
             />
             <SocialLink
               icon={<GrTwitter />}
-              href="https://www.twitter.com/"
+              href="https://twitter.com/35ereneroglu"
               text="Twitter"
               color="#1da1f2"
             />
             <SocialLink
               icon={<GrYoutube />}
-              href="https://www.youtube.com/"
+              href="https://www.youtube.com/channel/UCotJX6uiRsp9zbqeP6KKTzQ"
               text="YouTube"
               color="#ff0000"
             />
             <SocialLink
               icon={<AiFillMediumCircle />}
-              href="https://www.medium.com/"
+              href="https://medium.com/@ereneroglu"
               text="Medium"
               color="#000000"
             />
             <SocialLink
               icon={<AiFillGithub />}
-              href="https://www.github.com/"
+              href="https://github.com/eren-eroglu"
               text="GitHub"
               color="#ffffff"
             />
             <SocialLink
               icon={<SiGmail />}
-              href="mailto:example@gmail.com"
+              href="mailto:ereneroglu.dev@gmail.com"
               text="Email"
               color="#d14836"
             />
@@ -82,9 +82,9 @@ function Contact() {
 
           <Link
             to="/yazilim-kaynaklari"
-            className="p-5 absolute py-3 bg-accent rounded-md text-neutral font-bold hover:bg-blue-600 transition-colors duration-300 mt-2 flex"
+            className="p-5 absolute py-3 bg-accent rounded-md text-white font-bold hover:bg-blue-600 transition-colors duration-300 mt-2 flex"
           >
-            <BiArrowBack className="mt-1 me-2"/> Geri dön
+            <BiArrowBack className="mt-1 me-2  "/>  Geri dön
           </Link>
         </div>
       </div>
